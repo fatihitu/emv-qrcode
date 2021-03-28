@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.function.BiConsumer;
 
+import com.emv.qrcode.model.cpm.ApplicationSpecificTransparentTemplate;
 import org.apache.commons.codec.binary.Hex;
 
 import com.emv.qrcode.core.exception.DuplicateTagException;
@@ -46,6 +47,16 @@ public final class CommonDataTemplateDecoder extends DecoderCpm<CommonDataTempla
     mapConsumers.put(TagTransactionProcessingCodes.ID_APPLICATION_CRYPTOGRAM, consumerTagLengthValue(BERTLBinary.class, CommonDataTemplate::addAdditionalData));
     mapConsumers.put(TagTransactionProcessingCodes.ID_ISSUER_APPLICATION_DATA, consumerTagLengthValue(BERTLBinary.class, CommonDataTemplate::addAdditionalData));
     mapConsumers.put(TagTransactionProcessingCodes.ID_UNPREDICTABLE_NUMBER, consumerTagLengthValue(BERTLBinary.class, CommonDataTemplate::addAdditionalData));
+
+    // vendor specific tags
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_MOBILE_NUMBER, consumerTagLengthValue(BERTLNumeric.class, CommonDataTemplate::addAdditionalData));
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_EXPIRY_DATE, consumerTagLengthValue(BERTLNumeric.class, CommonDataTemplate::addAdditionalData));
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_NAME, consumerTagLengthValue(BERTLAlphanumeric.class, CommonDataTemplate::addAdditionalData));
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_WALLET_ISSUER, consumerTagLengthValue(BERTLAlphanumeric.class, CommonDataTemplate::addAdditionalData));
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_CRYPTOGRAM, consumerTagLengthValue(BERTLBinary.class, CommonDataTemplate::addAdditionalData));
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_OFFLINE_ONLINE_RESULT, consumerTagLengthValue(BERTLNumeric.class, CommonDataTemplate::addAdditionalData));
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_PIN, consumerTagLengthValue(BERTLAlphanumeric.class, CommonDataTemplate::addAdditionalData));
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_TOKEN_REQUESTOR_ID, consumerTagLengthValue(BERTLAlphanumeric.class, CommonDataTemplate::addAdditionalData));
   }
 
   public CommonDataTemplateDecoder(final byte[] source) {

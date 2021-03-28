@@ -204,6 +204,79 @@ public class BERTagTest {
     assertThat(berTag.getBytes().length, equalTo(2));
   }
 
+  // Vendor Tags Test
+  @Test
+  public void testVendorMobileNumber() throws IOException {
+    final BERTag berTag = TagTransactionProcessingCodes.ID_VENDOR_MOBILE_NUMBER;
+    assertThat(berTag.toString(), equalTo("DF79"));
+    assertThat(berTag.getTagClass(), equalTo(TagClass.PRIVATE));
+    assertThat(berTag.getTagType(), equalTo(TagType.PRIMITIVE));
+    assertThat(berTag.getBytes().length, equalTo(2));
+  }
+
+  @Test
+  public void testVendorExpiryDate() throws IOException {
+    final BERTag berTag = TagTransactionProcessingCodes.ID_VENDOR_EXPIRY_DATE;
+    assertThat(berTag.toString(), equalTo("DF78"));
+    assertThat(berTag.getTagClass(), equalTo(TagClass.PRIVATE));
+    assertThat(berTag.getTagType(), equalTo(TagType.PRIMITIVE));
+    assertThat(berTag.getBytes().length, equalTo(2));
+  }
+
+  @Test
+  public void testVendorName() throws IOException {
+    final BERTag berTag = TagTransactionProcessingCodes.ID_VENDOR_NAME;
+    assertThat(berTag.toString(), equalTo("DF77"));
+    assertThat(berTag.getTagClass(), equalTo(TagClass.PRIVATE));
+    assertThat(berTag.getTagType(), equalTo(TagType.PRIMITIVE));
+    assertThat(berTag.getBytes().length, equalTo(2));
+  }
+
+  @Test
+  public void testVendorWalletIssuer() throws IOException {
+    final BERTag berTag = TagTransactionProcessingCodes.ID_VENDOR_WALLET_ISSUER;
+    assertThat(berTag.toString(), equalTo("DF76"));
+    assertThat(berTag.getTagClass(), equalTo(TagClass.PRIVATE));
+    assertThat(berTag.getTagType(), equalTo(TagType.PRIMITIVE));
+    assertThat(berTag.getBytes().length, equalTo(2));
+  }
+
+  @Test
+  public void testVendorCryptogram() throws IOException {
+    final BERTag berTag = TagTransactionProcessingCodes.ID_VENDOR_CRYPTOGRAM;
+    assertThat(berTag.toString(), equalTo("DF75"));
+    assertThat(berTag.getTagClass(), equalTo(TagClass.PRIVATE));
+    assertThat(berTag.getTagType(), equalTo(TagType.PRIMITIVE));
+    assertThat(berTag.getBytes().length, equalTo(2));
+  }
+
+  @Test
+  public void testVendorOfflineOnlineResult() throws IOException {
+    final BERTag berTag = TagTransactionProcessingCodes.ID_VENDOR_OFFLINE_ONLINE_RESULT;
+    assertThat(berTag.toString(), equalTo("DF74"));
+    assertThat(berTag.getTagClass(), equalTo(TagClass.PRIVATE));
+    assertThat(berTag.getTagType(), equalTo(TagType.PRIMITIVE));
+    assertThat(berTag.getBytes().length, equalTo(2));
+  }
+
+  @Test
+  public void testVendorPin() throws IOException {
+    final BERTag berTag = TagTransactionProcessingCodes.ID_VENDOR_PIN;
+    assertThat(berTag.toString(), equalTo("DF73"));
+    assertThat(berTag.getTagClass(), equalTo(TagClass.PRIVATE));
+    assertThat(berTag.getTagType(), equalTo(TagType.PRIMITIVE));
+    assertThat(berTag.getBytes().length, equalTo(2));
+  }
+
+  @Test
+  public void testVendorTokenRequestorId() throws IOException {
+    final BERTag berTag = TagTransactionProcessingCodes.ID_VENDOR_TOKEN_REQUESTOR_ID;
+    assertThat(berTag.toString(), equalTo("DF72"));
+    assertThat(berTag.getTagClass(), equalTo(TagClass.PRIVATE));
+    assertThat(berTag.getTagType(), equalTo(TagType.PRIMITIVE));
+    assertThat(berTag.getBytes().length, equalTo(2));
+  }
+
   @Test
   public void testEquals() throws IOException {
     assertThat(TagTransactionProcessingCodes.ID_ISSUER_APPLICATION_DATA, equalTo(TagTransactionProcessingCodes.ID_ISSUER_APPLICATION_DATA));

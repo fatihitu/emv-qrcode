@@ -21,6 +21,17 @@ public final class TagTransactionProcessingCodes {
   public static final BERTag ID_ISSUER_APPLICATION_DATA = new BERTag(new byte[] { (byte) 0x9F, 0x10 }); // Issuer Application Data
   public static final BERTag ID_UNPREDICTABLE_NUMBER = new BERTag(new byte[] { (byte) 0x9F, 0x37 }); // Unpredictable Number
 
+  public static final BERTag ID_VENDOR_MOBILE_NUMBER = new BERTag(new byte[] { (byte) 0xDF, 0x79 }); // MOBILE NUMBER
+  public static final BERTag ID_VENDOR_EXPIRY_DATE = new BERTag(new byte[] { (byte) 0xDF, 0x78 }); // EXPIRY DATE
+  public static final BERTag ID_VENDOR_NAME = new BERTag(new byte[] { (byte) 0xDF, 0x77 }); // NAME
+  public static final BERTag ID_VENDOR_WALLET_ISSUER = new BERTag(new byte[] { (byte) 0xDF, 0x76 }); // WALLET ISSUER
+  public static final BERTag ID_VENDOR_CRYPTOGRAM = new BERTag(new byte[] { (byte) 0xDF, 0x75 }); // CRYPTOGRAM
+  public static final BERTag ID_VENDOR_OFFLINE_ONLINE_RESULT = new BERTag(new byte[] { (byte) 0xDF, 0x74 }); // OFFLINE/ONLINE RESULT
+  public static final BERTag ID_VENDOR_PIN = new BERTag(new byte[] { (byte) 0xDF, 0x73 }); // PIN
+  public static final BERTag ID_VENDOR_TOKEN_REQUESTOR_ID = new BERTag(new byte[] { (byte) 0xDF, 0x72 }); // TOKEN REQUESTOR ID
+
+
+
   private TagTransactionProcessingCodes() {
     super();
   }

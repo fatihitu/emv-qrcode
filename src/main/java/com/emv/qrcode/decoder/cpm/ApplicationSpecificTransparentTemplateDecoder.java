@@ -43,6 +43,17 @@ public final class ApplicationSpecificTransparentTemplateDecoder extends Decoder
     mapConsumers.put(TagTransactionProcessingCodes.ID_APPLICATION_CRYPTOGRAM, consumerTagLengthValue(BERTLBinary.class, ApplicationSpecificTransparentTemplate::addAdditionalData));
     mapConsumers.put(TagTransactionProcessingCodes.ID_ISSUER_APPLICATION_DATA, consumerTagLengthValue(BERTLBinary.class, ApplicationSpecificTransparentTemplate::addAdditionalData));
     mapConsumers.put(TagTransactionProcessingCodes.ID_UNPREDICTABLE_NUMBER, consumerTagLengthValue(BERTLBinary.class, ApplicationSpecificTransparentTemplate::addAdditionalData));
+
+    // vendor specific tags
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_MOBILE_NUMBER, consumerTagLengthValue(BERTLNumeric.class, ApplicationSpecificTransparentTemplate::addAdditionalData));
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_EXPIRY_DATE, consumerTagLengthValue(BERTLNumeric.class, ApplicationSpecificTransparentTemplate::addAdditionalData));
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_NAME, consumerTagLengthValue(BERTLAlphanumeric.class, ApplicationSpecificTransparentTemplate::addAdditionalData));
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_WALLET_ISSUER, consumerTagLengthValue(BERTLAlphanumeric.class, ApplicationSpecificTransparentTemplate::addAdditionalData));
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_CRYPTOGRAM, consumerTagLengthValue(BERTLBinary.class, ApplicationSpecificTransparentTemplate::addAdditionalData));
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_OFFLINE_ONLINE_RESULT, consumerTagLengthValue(BERTLNumeric.class, ApplicationSpecificTransparentTemplate::addAdditionalData));
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_PIN, consumerTagLengthValue(BERTLAlphanumeric.class, ApplicationSpecificTransparentTemplate::addAdditionalData));
+    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_TOKEN_REQUESTOR_ID, consumerTagLengthValue(BERTLAlphanumeric.class, ApplicationSpecificTransparentTemplate::addAdditionalData));
+
   }
 
   public ApplicationSpecificTransparentTemplateDecoder(final byte[] source) {

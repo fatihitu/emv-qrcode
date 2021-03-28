@@ -95,6 +95,40 @@ public abstract class AdditionalData implements Serializable {
     addAdditionalData(new BERTLBinary(TagTransactionProcessingCodes.ID_UNPREDICTABLE_NUMBER, unpredictableNumber));
   }
 
+  // Vendor Tags
+  public final void setVendorMobileNumber(final String mobileNumber) {
+    addAdditionalData(new BERTLNumeric(TagTransactionProcessingCodes.ID_VENDOR_MOBILE_NUMBER, mobileNumber));
+  }
+
+  public final void setVendorExpiryDate(final String expiryDate) {
+    addAdditionalData(new BERTLNumeric(TagTransactionProcessingCodes.ID_VENDOR_EXPIRY_DATE, expiryDate));
+  }
+
+  public final void setVendorName(final String name) {
+    addAdditionalData(new BERTLAlphanumeric(TagTransactionProcessingCodes.ID_VENDOR_NAME, name));
+  }
+
+  public final void setVendorWalletIssuer(final String walletIssuer) {
+    addAdditionalData(new BERTLAlphanumeric(TagTransactionProcessingCodes.ID_VENDOR_WALLET_ISSUER, walletIssuer));
+  }
+
+  public final void setVendorCryptogram(final String cryptogram) {
+    addAdditionalData(new BERTLBinary(TagTransactionProcessingCodes.ID_VENDOR_CRYPTOGRAM, cryptogram));
+  }
+
+  public final void setVendorOfflineOnlineResult(final String offlineOnlineResult) {
+    addAdditionalData(new BERTLNumeric(TagTransactionProcessingCodes.ID_VENDOR_OFFLINE_ONLINE_RESULT, offlineOnlineResult));
+  }
+
+  public final void setVendorPin(final String pin) {
+    addAdditionalData(new BERTLAlphanumeric(TagTransactionProcessingCodes.ID_VENDOR_PIN, pin));
+  }
+
+  public final void setVendorTokenRequestorId(final String tokenRequestorId) {
+    addAdditionalData(new BERTLAlphanumeric(TagTransactionProcessingCodes.ID_VENDOR_TOKEN_REQUESTOR_ID, tokenRequestorId));
+  }
+
+
   public final BERTLV getAdditionalData(final BERTag tag) {
     return additionalDataMap.get(tag);
   }
@@ -162,6 +196,40 @@ public abstract class AdditionalData implements Serializable {
   public final BERTLV getUnpredictableNumber() {
     return getAdditionalData(TagTransactionProcessingCodes.ID_UNPREDICTABLE_NUMBER);
   }
+
+  // Vendor Tags
+  public final BERTLV getVendorMobileNumber() {
+    return getAdditionalData(TagTransactionProcessingCodes.ID_VENDOR_MOBILE_NUMBER);
+  }
+
+  public final BERTLV getVendorExpiryDate() {
+    return getAdditionalData(TagTransactionProcessingCodes.ID_VENDOR_EXPIRY_DATE);
+  }
+
+  public final BERTLV getVendorName() {
+    return getAdditionalData(TagTransactionProcessingCodes.ID_VENDOR_NAME);
+  }
+
+  public final BERTLV getVendorWalletIssuer() {
+    return getAdditionalData(TagTransactionProcessingCodes.ID_VENDOR_WALLET_ISSUER);
+  }
+
+  public final BERTLV getVendorCryptogram() {
+    return getAdditionalData(TagTransactionProcessingCodes.ID_VENDOR_CRYPTOGRAM);
+  }
+
+  public final BERTLV getVendorOfflineOnlineResult() {
+    return getAdditionalData(TagTransactionProcessingCodes.ID_VENDOR_OFFLINE_ONLINE_RESULT);
+  }
+
+  public final BERTLV getVendorPin() {
+    return getAdditionalData(TagTransactionProcessingCodes.ID_VENDOR_PIN);
+  }
+
+  public final BERTLV getVendorTokenRequestorId() {
+    return getAdditionalData(TagTransactionProcessingCodes.ID_VENDOR_TOKEN_REQUESTOR_ID);
+  }
+
 
   public byte[] getBytes() throws IOException {
     try (final ByteArrayOutputStream out = new ByteArrayOutputStream()) {
