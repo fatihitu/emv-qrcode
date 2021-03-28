@@ -25,19 +25,17 @@ public class VendorCommonDataTransparentTemplateTest {
     commonDataTransparentTemplate.setVendorCryptogram("123456789ABCDEF0");
     commonDataTransparentTemplate.setVendorOfflineOnlineResult("01");
     commonDataTransparentTemplate.setVendorPin("1234");
-    commonDataTransparentTemplate.setVendorTokenRequestorId("12345678");
 
     assertThat(commonDataTransparentTemplate.getTag(), equalTo(ConsumerPresentedModeFieldCodes.ID_COMMON_DATA_TRANSPARENT_TEMPLATE));
     assertThat(Hex.encodeHexString(commonDataTransparentTemplate.getBytes(), false),
-            equalTo("6453" +
+            equalTo("6448" +
                     "DF7906971581234567" +
                     "DF78022502" +
                     "DF7711416264756C6B6172696D204D6F756D696E" +
                     "DF760D57616C6C657420497373756572" +
                     "DF7508123456789ABCDEF0" +
                     "DF740101" +
-                    "DF730431323334" +
-                    "DF72083132333435363738"));
+                    "DF730431323334"));
   }
 
 

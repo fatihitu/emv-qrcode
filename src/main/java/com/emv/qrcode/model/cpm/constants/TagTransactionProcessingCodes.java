@@ -28,7 +28,6 @@ public final class TagTransactionProcessingCodes {
   public static final BERTag ID_VENDOR_CRYPTOGRAM = new BERTag(new byte[] { (byte) 0xDF, 0x75 }); // CRYPTOGRAM
   public static final BERTag ID_VENDOR_OFFLINE_ONLINE_RESULT = new BERTag(new byte[] { (byte) 0xDF, 0x74 }); // OFFLINE/ONLINE RESULT
   public static final BERTag ID_VENDOR_PIN = new BERTag(new byte[] { (byte) 0xDF, 0x73 }); // PIN
-  public static final BERTag ID_VENDOR_TOKEN_REQUESTOR_ID = new BERTag(new byte[] { (byte) 0xDF, 0x72 }); // TOKEN REQUESTOR ID
 
 
 

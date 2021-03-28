@@ -30,20 +30,18 @@ public class VendorCommonDataTemplateTest {
     commonDataTemplate.setVendorCryptogram("123456789ABCDEF0");
     commonDataTemplate.setVendorOfflineOnlineResult("01");
     commonDataTemplate.setVendorPin("1234");
-    commonDataTemplate.setVendorTokenRequestorId("12345678");
     commonDataTemplate.setCommonDataTransparentTemplate(commonDataTransparentTemplate);
 
     assertThat(commonDataTemplate.getTag(), equalTo(ConsumerPresentedModeFieldCodes.ID_COMMON_DATA_TEMPLATE));
     assertThat(Hex.encodeHexString(commonDataTemplate.getBytes(), false), equalTo(
-            "626B4F07A0000000777777500D4D6F62696C652057616C6C6574" +
+            "62604F07A0000000777777500D4D6F62696C652057616C6C6574" +
                     "DF7906971581234567" +
                     "DF78022502" +
                     "DF7711416264756C6B6172696D204D6F756D696E" +
                     "DF760D57616C6C657420497373756572" +
                     "DF7508123456789ABCDEF0" +
                     "DF740101" +
-                    "DF730431323334" +
-                    "DF72083132333435363738"));
+                    "DF730431323334"));
   }
   @Test
   public void testVendorSuccessToHex() throws IOException {
@@ -62,12 +60,11 @@ public class VendorCommonDataTemplateTest {
     commonDataTemplate.setVendorCryptogram("7654");
     commonDataTemplate.setVendorOfflineOnlineResult("7654");
     commonDataTemplate.setVendorPin("7654");
-    commonDataTemplate.setVendorTokenRequestorId("7654");
     commonDataTemplate.setCommonDataTransparentTemplate(commonDataTransparentTemplate);
 
     assertThat(commonDataTemplate.getTag(), equalTo(ConsumerPresentedModeFieldCodes.ID_COMMON_DATA_TEMPLATE));
     assertThat(Hex.encodeHexString(commonDataTemplate.getBytes(), false), equalTo(
-        "62424F027654500437363534DF79027654DF78027654DF770437363534DF760437363534DF75027654DF74027654DF730437363534DF7204373635346406000437363534"));
+        "623B4F027654500437363534DF79027654DF78027654DF770437363534DF760437363534DF75027654DF74027654DF7304373635346406000437363534"));
   }
 
   @Test
@@ -84,7 +81,6 @@ public class VendorCommonDataTemplateTest {
     commonDataTemplate.setVendorCryptogram(StringUtils.EMPTY);
     commonDataTemplate.setVendorOfflineOnlineResult(StringUtils.EMPTY);
     commonDataTemplate.setVendorPin(StringUtils.EMPTY);
-    commonDataTemplate.setVendorTokenRequestorId(StringUtils.EMPTY);
 
     assertThat(commonDataTemplate.getTag(), equalTo(ConsumerPresentedModeFieldCodes.ID_COMMON_DATA_TEMPLATE));
     assertThat(Hex.encodeHexString(commonDataTemplate.getBytes(), false), equalTo(StringUtils.EMPTY));
@@ -105,7 +101,6 @@ public class VendorCommonDataTemplateTest {
     commonDataTemplate.setVendorCryptogram(null);
     commonDataTemplate.setVendorOfflineOnlineResult(null);
     commonDataTemplate.setVendorPin(null);
-    commonDataTemplate.setVendorTokenRequestorId(null);
 
     assertThat(commonDataTemplate.getTag(), equalTo(ConsumerPresentedModeFieldCodes.ID_COMMON_DATA_TEMPLATE));
     assertThat(Hex.encodeHexString(commonDataTemplate.getBytes(), false), equalTo(StringUtils.EMPTY));

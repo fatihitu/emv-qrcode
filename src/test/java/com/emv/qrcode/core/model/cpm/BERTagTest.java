@@ -268,14 +268,6 @@ public class BERTagTest {
     assertThat(berTag.getBytes().length, equalTo(2));
   }
 
-  @Test
-  public void testVendorTokenRequestorId() throws IOException {
-    final BERTag berTag = TagTransactionProcessingCodes.ID_VENDOR_TOKEN_REQUESTOR_ID;
-    assertThat(berTag.toString(), equalTo("DF72"));
-    assertThat(berTag.getTagClass(), equalTo(TagClass.PRIVATE));
-    assertThat(berTag.getTagType(), equalTo(TagType.PRIMITIVE));
-    assertThat(berTag.getBytes().length, equalTo(2));
-  }
 
   @Test
   public void testEquals() throws IOException {

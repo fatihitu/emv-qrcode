@@ -124,10 +124,6 @@ public abstract class AdditionalData implements Serializable {
     addAdditionalData(new BERTLAlphanumeric(TagTransactionProcessingCodes.ID_VENDOR_PIN, pin));
   }
 
-  public final void setVendorTokenRequestorId(final String tokenRequestorId) {
-    addAdditionalData(new BERTLAlphanumeric(TagTransactionProcessingCodes.ID_VENDOR_TOKEN_REQUESTOR_ID, tokenRequestorId));
-  }
-
 
   public final BERTLV getAdditionalData(final BERTag tag) {
     return additionalDataMap.get(tag);
@@ -226,9 +222,6 @@ public abstract class AdditionalData implements Serializable {
     return getAdditionalData(TagTransactionProcessingCodes.ID_VENDOR_PIN);
   }
 
-  public final BERTLV getVendorTokenRequestorId() {
-    return getAdditionalData(TagTransactionProcessingCodes.ID_VENDOR_TOKEN_REQUESTOR_ID);
-  }
 
 
   public byte[] getBytes() throws IOException {

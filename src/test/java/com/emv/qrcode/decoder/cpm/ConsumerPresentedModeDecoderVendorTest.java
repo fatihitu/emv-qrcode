@@ -22,7 +22,7 @@ public class ConsumerPresentedModeDecoderVendorTest {
 
   @Test
   public void testSuccessVendorDecode() throws Exception {
-    final String encoded = "hQVDUFYwMWEYTwegAAAAd3d3UA1Nb2JpbGUgV2FsbGV0Yl5fLQZhcmVuZGVkU995BpcVgSNFZ994AiUC33cRQWJkdWxrYXJpbSBNb3VtaW7fdg1XYWxsZXQgSXNzdWVy33UIEjRWeJq83vDfdAEB33MEMTIzNN9yCDEyMzQ1Njc4";
+    final String encoded = "hQVDUFYwMWEYTwegAAAAd3d3UA1Nb2JpbGUgV2FsbGV0YlpfLQZhcmVuZGWfGQQSNFZ4ZEjfeQaXFYEjRWffeAIlAt93EUFiZHVsa2FyaW0gTW91bWlu33YNV2FsbGV0IElzc3Vlct91CBI0VniavN7w33QBAd9zBDEyMzQ";
 
     final ConsumerPresentedMode consumerPresentedMode = DecoderCpm.decode(encoded, ConsumerPresentedMode.class);
 
@@ -41,6 +41,8 @@ public class ConsumerPresentedModeDecoderVendorTest {
     assertThat(commonDataTemplate.getTag(), equalTo(ConsumerPresentedModeFieldCodes.ID_COMMON_DATA_TEMPLATE));
     assertThat(commonDataTemplate.getLanguagePreference().getTag(), equalTo(TagTransactionProcessingCodes.ID_LANGUAGE_PREFERENCE));
     assertThat(commonDataTemplate.getLanguagePreference().getStringValue(), equalTo("arende"));
+    assertThat(commonDataTemplate.getTokenRequestorID().getTag(), equalTo(TagTransactionProcessingCodes.ID_TOKEN_REQUESTOR_ID));
+    assertThat(commonDataTemplate.getTokenRequestorID().getStringValue(), equalTo("12345678"));
 
     final CommonDataTransparentTemplate commonDataTransparentTemplate = commonDataTemplate.getCommonDataTransparentTemplate();
     assertThat(commonDataTransparentTemplate.getTag(), equalTo(ConsumerPresentedModeFieldCodes.ID_COMMON_DATA_TRANSPARENT_TEMPLATE));
@@ -58,8 +60,6 @@ public class ConsumerPresentedModeDecoderVendorTest {
     assertThat(commonDataTransparentTemplate.getVendorOfflineOnlineResult().getStringValue(), equalTo("01"));
     assertThat(commonDataTransparentTemplate.getVendorPin().getTag(), equalTo(TagTransactionProcessingCodes.ID_VENDOR_PIN));
     assertThat(commonDataTransparentTemplate.getVendorPin().getStringValue(), equalTo("1234"));
-    assertThat(commonDataTransparentTemplate.getVendorTokenRequestorId().getTag(), equalTo(TagTransactionProcessingCodes.ID_VENDOR_TOKEN_REQUESTOR_ID));
-    assertThat(commonDataTransparentTemplate.getVendorTokenRequestorId().getStringValue(), equalTo("12345678"));
 
   }
 

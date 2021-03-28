@@ -56,7 +56,6 @@ public final class CommonDataTemplateDecoder extends DecoderCpm<CommonDataTempla
     mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_CRYPTOGRAM, consumerTagLengthValue(BERTLBinary.class, CommonDataTemplate::addAdditionalData));
     mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_OFFLINE_ONLINE_RESULT, consumerTagLengthValue(BERTLNumeric.class, CommonDataTemplate::addAdditionalData));
     mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_PIN, consumerTagLengthValue(BERTLAlphanumeric.class, CommonDataTemplate::addAdditionalData));
-    mapConsumers.put(TagTransactionProcessingCodes.ID_VENDOR_TOKEN_REQUESTOR_ID, consumerTagLengthValue(BERTLAlphanumeric.class, CommonDataTemplate::addAdditionalData));
   }
 
   public CommonDataTemplateDecoder(final byte[] source) {
